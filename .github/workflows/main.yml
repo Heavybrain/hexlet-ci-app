@@ -1,8 +1,17 @@
+name: My Workflow
+
+on:
+  push:
+    branches:
+      - main  # Or whichever branch you want to trigger the workflow
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
     - name: Setup Project
       run: make setup
     - name: Run Tests
