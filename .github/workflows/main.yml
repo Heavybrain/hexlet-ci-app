@@ -1,8 +1,11 @@
 jobs:
-  build: # имя взято для примера
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    make setup 
-    make test
-    make lint
+    - name: Setup Project
+      run: make setup
+    - name: Run Tests
+      run: make test
+    - name: Run Linter
+      run: make lint
